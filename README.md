@@ -18,7 +18,7 @@ LLM, workflow/coordination, user input, and memory/state.
 
 > Main chat interface served directly from the Worker at `/`.
 
-![CF AI Helper – first page](docs/landing.png)
+![CF AI Helper – first page](landing.png)
 
 *(Place a screenshot of the first page at `docs/landing.png` in the repo to see this image on GitHub.)*
 
@@ -34,4 +34,5 @@ LLM, workflow/coordination, user input, and memory/state.
   "vars": {
     "MODEL_ID": "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
   }
+
 
