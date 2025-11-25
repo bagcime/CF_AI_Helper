@@ -1,4 +1,4 @@
-# CF AI Helper – “Mr. Knows More Than You”
+# “Mr. Knows More Than You”
 
 An AI-powered chat application built on Cloudflare’s edge platform.
 
@@ -22,7 +22,7 @@ This project is built for the **Cloudflare AI optional assignment** and is desig
 
 > Main chat interface served directly from the Worker at `/`.
 
-![CF AI Helper – first page](docs/landing.png)
+![CF AI Helper – first page](landing.png)
 
 *(Place a screenshot of the first page at `docs/landing.png` in the repo to see this image on GitHub.)*
 
@@ -114,3 +114,4 @@ Each browser tab gets an independent session and its own memory.
   export interface ChatState {
     history: { role: "user" | "assistant"; content: string }[];
   }
+
