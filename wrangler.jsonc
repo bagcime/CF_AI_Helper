@@ -1,0 +1,49 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+
+  // This is the Worker / Agent service name on Cloudflare
+  "name": "cf-ai-helper",
+
+  // Entry file we will create in src/index.ts
+  "main": "src/index.ts",
+
+  // Any recent date is fine; use "today" as a starting point
+  "compatibility_date": "2025-11-24",
+  "compatibility_flags": ["nodejs_compat"],
+
+  // === Durable Object: this is your Agent's runtime & MEMORY ===
+  "durable_objects": {
+    "bindings": [
+      {
+        // How the Worker refers to the Agent durable object
+        "name": "CfAiHelperAgent",
+        // Must match the TypeScript class name we'll define later in src/index.ts
+        "class_name": "CfAiHelperAgent"
+      }
+    ]
+  },
+
+  // For SQLite-backed Durable Objects (required for persistent Agent state)
+  "migrations": [
+    {
+      "tag": "v1",
+      // This enables SQLite storage for your Agent class
+      "new_sqlite_classes": ["CfAiHelperAgent"]
+    }
+  ],
+
+  // === Workers AI binding (for Llama 3.3) ===
+  "ai": {
+    "binding": "AI"
+  },
+
+  // Some config we might want available in Env.vars
+  "vars": {
+    // Model from Workers AI "Models" page (fast fp8 Llama 3.3 70B)
+    "MODEL_ID": "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
+  },
+
+  "observability": {
+    "enabled": true
+  }
+}
