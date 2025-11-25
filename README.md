@@ -1,4 +1,4 @@
-# CF AI Helper – “Mr. Knows More Than You”
+# “Mr. Knows More Than You”
 
 An AI-powered chat application built on Cloudflare’s edge platform.
 
@@ -34,3 +34,4 @@ LLM, workflow/coordination, user input, and memory/state.
   "vars": {
     "MODEL_ID": "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
   }
+
